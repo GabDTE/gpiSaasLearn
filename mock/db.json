@@ -1,1 +1,82 @@
-{ "taches": [], "projects": [], "membres": [], "idees": []  }
+{
+  "membres": [
+    { "id": "m-1", "nom": "Inès Morel", "espaceId": "studio-nova" },
+    { "id": "m-2", "nom": "Hugo Lefèvre", "espaceId": "studio-nova" },
+    { "id": "m-3", "nom": "Sarah Benali", "espaceId": "studio-nova" }
+  ],
+  "projets": [
+    { "id": "p-1", "nom": "Site Studio Nova", "description": "Refonte du site vitrine de l'agence." },
+    { "id": "p-2", "nom": "GpiSaaS web", "description": "Le front web de GpiSaaS, de l'idée à l'action." },
+    { "id": "p-3", "nom": "Onboarding client", "description": "Parcours d'accueil des nouveaux clients." }
+  ],
+  "taches": [
+    {
+      "id": "t-1", "titre": "Maquetter le Kanban", "description": "Colonnes par statut, cartes déplaçables, version mobile en liste.",
+      "statut": "EN_COURS", "echeance": "2026-10-27", "membreId": "m-1", "projetId": "p-2",
+      "sousTaches": [
+        { "id": "st-1", "titre": "Colonnes desktop", "faite": true },
+        { "id": "st-2", "titre": "Vue liste mobile", "faite": false }
+      ]
+    },
+    {
+      "id": "t-2", "titre": "Écrire les types du domaine", "description": "Tache, Projet, Membre, Idee, Statut dans src/types.ts.",
+      "statut": "TERMINEE", "echeance": "2026-10-21", "membreId": "m-2", "projetId": "p-2", "sousTaches": []
+    },
+    {
+      "id": "t-3", "titre": "Brancher la liste des tâches", "description": "Afficher les tâches du faux back-end avec useFetch.",
+      "statut": "EN_REVUE", "echeance": "2026-10-22", "membreId": "m-1", "projetId": "p-2",
+      "sousTaches": [{ "id": "st-3", "titre": "États chargement et erreur", "faite": true }]
+    },
+    {
+      "id": "t-4", "titre": "Filtres de la liste", "description": "Statut, membre et recherche, partagés entre la barre et la liste.",
+      "statut": "A_FAIRE", "echeance": "2026-10-23", "membreId": "m-3", "projetId": "p-2", "sousTaches": []
+    },
+    {
+      "id": "t-5", "titre": "Formulaire de création de tâche", "description": "Formulaire validé avec affectation d'un membre.",
+      "statut": "A_FAIRE", "echeance": "2026-11-16", "membreId": null, "projetId": "p-2", "sousTaches": []
+    },
+    {
+      "id": "t-6", "titre": "Rédiger la page d'accueil", "description": "Texte de présentation de l'agence et appel à l'action.",
+      "statut": "EN_COURS", "echeance": "2026-10-30", "membreId": "m-3", "projetId": "p-1",
+      "sousTaches": [
+        { "id": "st-4", "titre": "Premier jet", "faite": true },
+        { "id": "st-5", "titre": "Relecture", "faite": false }
+      ]
+    },
+    {
+      "id": "t-7", "titre": "Optimiser les images", "description": "Formats modernes et dimensions explicites pour limiter le CLS.",
+      "statut": "A_FAIRE", "echeance": "2026-11-05", "membreId": "m-2", "projetId": "p-1", "sousTaches": []
+    },
+    {
+      "id": "t-8", "titre": "Audit d'accessibilité du site", "description": "axe DevTools, navigation clavier, contrastes.",
+      "statut": "A_FAIRE", "echeance": "2026-11-18", "membreId": "m-1", "projetId": "p-1", "sousTaches": []
+    },
+    {
+      "id": "t-9", "titre": "Préparer l'e-mail de bienvenue", "description": "Modèle d'e-mail envoyé à la signature.",
+      "statut": "EN_REVUE", "echeance": "2026-10-29", "membreId": "m-2", "projetId": "p-3", "sousTaches": []
+    },
+    {
+      "id": "t-10", "titre": "Checklist d'onboarding", "description": "Les étapes du premier rendez-vous client.",
+      "statut": "TERMINEE", "echeance": "2026-10-15", "membreId": "m-3", "projetId": "p-3",
+      "sousTaches": [{ "id": "st-6", "titre": "Valider avec la direction", "faite": true }]
+    },
+    {
+      "id": "t-11", "titre": "Maquette de la fiche tâche", "description": "Membre, échéance, sous-tâches, commentaires.",
+      "statut": "EN_COURS", "echeance": "2026-10-24", "membreId": "m-2", "projetId": "p-2", "sousTaches": []
+    },
+    {
+      "id": "t-12", "titre": "Tableau de bord client", "description": "Vue synthétique de l'avancement pour le client.",
+      "statut": "A_FAIRE", "echeance": "2026-11-12", "membreId": null, "projetId": "p-3", "sousTaches": []
+    }
+  ],
+  "commentaires": [
+    { "id": "c-1", "tacheId": "t-1", "membreId": "m-2", "texte": "La vue mobile en liste me paraît plus simple que des colonnes qui défilent.", "date": "2026-10-20T14:10:00Z" },
+    { "id": "c-2", "tacheId": "t-1", "membreId": "m-1", "texte": "D'accord, je passe en liste sous 768 px.", "date": "2026-10-20T15:02:00Z" },
+    { "id": "c-3", "tacheId": "t-3", "membreId": "m-3", "texte": "Pense à annuler la requête précédente quand le filtre change.", "date": "2026-10-21T09:30:00Z" }
+  ],
+  "idees": [
+    { "id": "i-1", "titre": "Mode sombre", "tri": "A_TRIER" },
+    { "id": "i-2", "titre": "Export PDF du Kanban", "tri": "PROJET" },
+    { "id": "i-3", "titre": "Relancer les tâches en retard", "tri": "TODO" }
+  ]
+}
