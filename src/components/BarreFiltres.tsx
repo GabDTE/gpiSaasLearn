@@ -14,6 +14,15 @@ export function BarreFiltres() {
   return (
     <form className="barre-filtres" role="search" onSubmit={e => e.preventDefault()}>
       <label>
+        Rechercher
+        <input
+          type="search"
+          value={filtres.recherche}
+          onChange={e => dispatch({ type: 'recherche', texte: e.target.value })}
+          placeholder="Titre de la tâche"
+        />
+      </label>
+      <label>
         Statut
         <select
           value={filtres.statut}
