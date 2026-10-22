@@ -1,10 +1,11 @@
 import { createContext, useContext, type Dispatch } from 'react'
 import type { Action, Filtres } from './filtres'
 
-// Deux contexts séparés (diapo 41) : un composant qui n'a besoin que de dispatch
-// (le bouton « Réinitialiser ») ne re-render pas quand les filtres changent, car
-// dispatch est stable. Ce fichier est en .ts (pas de JSX) pour que Fast Refresh
-// accepte le Provider seul dans FiltresProvider.tsx.
+// Deux contexts séparés (diapo 41) : un composant qui ne lit que dispatch n'est pas
+// re-rendu par le context quand les filtres changent, car dispatch est stable. Il
+// re-render tout de même si son parent re-render : c'est le cas du bouton
+// « Réinitialiser », enfant de BarreFiltres qui lit les filtres. Ce fichier est en .ts
+// (pas de JSX) pour que Fast Refresh accepte le Provider seul dans FiltresProvider.tsx.
 export const FiltresStateContext = createContext<Filtres | null>(null)
 export const FiltresDispatchContext = createContext<Dispatch<Action> | null>(null)
 

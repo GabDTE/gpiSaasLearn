@@ -47,7 +47,8 @@ export function BarreFiltres() {
   )
 }
 
-// N'utilise que dispatch : grâce aux contexts séparés, il ne re-render pas quand les filtres changent.
+// N'utilise que dispatch, mais re-render quand même à chaque changement de filtre : son parent
+// BarreFiltres lit les filtres, et un composant re-render avec son parent (aucun memo ici).
 function BoutonReinitialiser() {
   const dispatch = useFiltresDispatch()
   return <button type="button" onClick={() => dispatch({ type: 'reinitialiser' })}>Réinitialiser</button>
