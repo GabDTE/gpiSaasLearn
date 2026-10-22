@@ -60,9 +60,12 @@ export function PageFicheTache() {
         )}
 
       <h2>Commentaires</h2>
+      {/* Même raison que pour la tâche : les deux requêtes ne répondent pas en même temps,
+          sans ce test la nouvelle tâche s'afficherait avec les commentaires de l'ancienne. */}
+      {commentaires.loading && <p role="status">Chargement des commentaires…</p>}
       {commentaires.error && <p className="erreur">Commentaires indisponibles ({commentaires.error.message}).</p>}
-      {commentaires.data?.length === 0 && <p className="meta">Aucun commentaire.</p>}
-      {commentaires.data?.map(c => (
+      {!commentaires.loading && commentaires.data?.length === 0 && <p className="meta">Aucun commentaire.</p>}
+      {!commentaires.loading && commentaires.data?.map(c => (
         <div key={c.id} className="commentaire">
           <span className="meta">{c.membre?.nom ?? 'Membre inconnu'} · {new Date(c.date).toLocaleString('fr-FR', { dateStyle: 'short', timeStyle: 'short' })}</span>
           <p>{c.texte}</p>
